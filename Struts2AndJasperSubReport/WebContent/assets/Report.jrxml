@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="826a3b83-7937-4ac8-85d5-f9c83ade7de2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="EmpResultSet" class="net.sf.jasperreports.engine.JRResultSetDataSource"/>
+	<parameter name="SUBREPORT_DIR" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="NODATA" class="java.lang.String"/>
+	<title>
+		<band height="116" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="74" width="553" height="27" uuid="53cf9fd0-95be-4ca9-bb7e-408f185625c2"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Struts 2 and Jasper Subreports Integration Example]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="0" width="553" height="66" isPrintWhenDetailOverflows="true" forecolor="#1F77B4" backcolor="#FFFFFF" uuid="bbf86b85-6975-45b7-9751-6387e4502bbd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lato Black" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WebSparrow.org]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" x="2" y="0" width="555" height="19" isPrintWhenDetailOverflows="true" uuid="0d90bb22-f5dc-47ac-98b4-97e1d319af44"/>
+				<dataSourceExpression><![CDATA[$P{EmpResultSet}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="31">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="555" height="31" forecolor="#FF6666" uuid="bd35ac07-569c-4e5b-a491-939c4fe2e302"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NODATA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
