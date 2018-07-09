@@ -21,7 +21,7 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Object>
 	public String execute() throws Exception {
 		return SUCCESS;
 	}
-
+ 
 	public Object getModel() {
 		return employee;
 	}
