@@ -173,6 +173,9 @@ grant {
      "accessClassInPackage.org.apache.jasper.runtime.*";
 
     // Precompiled JSPs need access to these system properties.
+
+    // The following two permissions are no longer needed since Tomcat 8.0.53
+    // They are here for historic reasons. There is no harm in keeping them.
     permission java.util.PropertyPermission
      "org.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER", "read";
     permission java.util.PropertyPermission
@@ -185,6 +188,9 @@ grant {
      "org.apache.tomcat.util.http.ServerCookie.STRICT_NAMING", "read";
     permission java.util.PropertyPermission
      "org.apache.tomcat.util.http.ServerCookie.FWD_SLASH_IS_SEPARATOR", "read";
+
+    // Applications using Comet need to be able to access this package
+    permission java.lang.RuntimePermission "accessClassInPackage.org.apache.catalina.comet";
 
     // Applications using WebSocket need to be able to access these packages
     permission java.lang.RuntimePermission "accessClassInPackage.org.apache.tomcat.websocket";
